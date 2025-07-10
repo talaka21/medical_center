@@ -1,0 +1,20 @@
+<?php
+return[
+'Doctor_Created_successfully'=>'Doctor Created successfully',
+'Doctor_update_ successfully'=> 'Doctor update successfully',
+'Specialty_deleted_successfully'=>'Specialty deleted successfully',
+'Appointments_shown_successfully' => 'Appointments shown successfully',
+'Booked_appointments_shown_successfully' =>'Booked appointmentss hown successfully',
+'Schedule_generated_successfully'=>'Schedule generated successfully',
+'specialties_listed_successfully'=>'specialties listed successfully',
+'admin_logged_in_successfully'=> 'admin logged in successfully',
+'admin_logout_in_successfully'=>'admin logout in successfully',
+'Doctor_logout_in_successfully'=>'Doctor logout in successfully',
+'user_logged_in_successfully'=>'user logged in successfully',
+'user_logout_in_successfully' =>'user logout in successfully',
+'user_register_succefully'=>'user_register_succefully',
+'An_error_occurred_while_booking_the_appointment.'=>'An error occurred while booking the appointment.',
+'Appointment_booked_successfully.'=>'Appointment booked successfully.',
+'the_selected_time_is_outside_the_alloew_workingh_ours.'=>'the_selected time is outside the alloew workingh ours.',
+'This_time_slot_is_already_booked.'=>'This time slot is already booked.',
+];

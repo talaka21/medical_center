@@ -1,5 +1,22 @@
 <?php
-return[
-'reminder_subject' => 'تذكير بالموعد',
-'reminder_body' => 'لديك موعد مع الدكتور :doctor بتاريخ :date في الساعة :time.',
+return [
+    'Doctor_Created_successfully' => 'تم إنشاء الطبيب بنجاح',
+    'Doctor_update_ successfully' => 'تم تحديث بيانات الطبيب بنجاح',
+    'Specialty_deleted_successfully' => 'تم حذف التخصص بنجاح',
+    'Appointments_shown_successfully' => 'تم عرض المواعيد بنجاح',
+    'Booked_appointments_shown_successfully' => 'تم عرض المواعيد المحجوزة بنجاح',
+    'Schedule_generated_successfully' => 'تم إنشاء جدول المواعيد بنجاح',
+    'specialties_listed_successfully' => 'تم سرد التخصصات بنجاح',
+    'admin_logged_in_successfully' => 'تم تسجيل دخول المدير بنجاح',
+    'admin_logout_in_successfully' => 'تم تسجيل خروج المدير بنجاح',
+    'Doctor_logout_in_successfully' => 'تم تسجيل خروج الطبيب بنجاح',
+    'user_logged_in_successfully' => 'تم تسجيل دخول المستخدم بنجاح',
+    'user_logout_in_successfully' => 'تم تسجيل خروج المستخدم بنجاح',
+    'user_register_succefully' => 'تم تسجيل المستخدم بنجاح',
+    'An_error_occurred_while_booking_the_appointment.' => 'حدث خطأ أثناء حجز الموعد.',
+    'Appointment_booked_successfully.' => 'تم حجز الموعد بنجاح.',
+    'the_selected_time_is_outside_the_alloew_workingh_ours.' => 'الوقت المحدد خارج ساعات العمل المسموح بها.',
+    'This_time_slot_is_already_booked.' => 'هذه الفترة الزمنية محجوزة بالفعل.',
+    'reminder_subject' => 'تذكير بالموعد',
+    'reminder_body' => 'لديك موعد مع الدكتور :doctor بتاريخ :date في الساعة :time.',
 ];

@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Models\Appointment;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -9,22 +10,17 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class AppintmenMail extends Mailable
+class AppointmentReminderMail extends Mailable
 {
     use Queueable, SerializesModels;
 
     /**
      * Create a new message instance.
      */
-    public $appointment;
-     public $recipientType;
-    public function __construct($appointment, $recipientType)
+    public function __construct(protected Appointment $appointment)
     {
-       $this->appointment = $appointment;
-        $this->recipientType = $recipientType;
+
     }
-
-
 
     /**
      * Get the message envelope.
@@ -32,7 +28,7 @@ class AppintmenMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Appintmen Mail',
+            subject: 'Appointment Reminder Mail',
         );
     }
 
@@ -42,11 +38,10 @@ class AppintmenMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'Emails.appintmenEmail',
+            view: 'emails.appointment_reminder',
             with: [
-                'appointment' => $this->appointment,
-                'recipientType' => $this->recipientType,
-            ],
+            'appointment' => $this->appointment,
+        ],
         );
     }
 

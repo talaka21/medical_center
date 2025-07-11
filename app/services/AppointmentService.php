@@ -8,14 +8,16 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Validation\ValidationException;
 
-class AppointmentService
+class AppointmentService extends BaseService
 {
+
     protected $schedule;
     public function __construct()
     {
        $this->schedule = Config::get('schedule.time_slots', []);
-
+$this->model= Appointment::class;
     }
+
   public function bookAppointment($userId, $doctorId, $date, $time)
     {
 $allowedTimes = config('schedule.time_slots', []);

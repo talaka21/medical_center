@@ -32,7 +32,7 @@ $spacialty = $this->SpacialtyService->create($data);
 
 
 
-    public function update(SpacialtyRequest $request,  $id)
+    public function updateSpacialty(SpacialtyRequest $request,  $id)
     {
 
          $data = $request->validated();
@@ -43,7 +43,7 @@ $spacialty = $this->SpacialtyService->create($data);
        return $this->sendResponce($spacialty ,__('spacialty_update_ successfully'));
     }
 
-    public function destroy($id)
+    public function destroySpacialty($id)
     {
       $this->SpacialtyService->delete($id);
         return $this->sendResponce(null, __('Specialty_deleted_successfully'));

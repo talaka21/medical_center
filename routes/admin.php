@@ -12,9 +12,9 @@ Route::middleware('auth:admin')->group(function () {
     Route::get('logout', [AdminLoginController::class, 'logout']);
 
     Route::post('spacialty', [AdminController::class, 'addSpacialty']);
-    Route::put('spacialty/{id}', [AdminController::class, 'update']);
-    Route::delete('spacialty/{id}', [AdminController::class, 'destroy']);
+    Route::put('spacialty/{id}', [AdminController::class, 'updateSpacialty']);
+    Route::delete('spacialty/{id}', [AdminController::class, 'destroySpacialty']);
      Route::post('doctor', [AdminDoctorController::class, 'addDoctor']);
-    Route::put('doctor/{id}', [AdminDoctorController::class, 'update']);
-    Route::delete('doctor/{id}', [AdminDoctorController::class, 'destroy']);
+    Route::put('doctor/{id}', [AdminDoctorController::class, 'updateDoctor']);
+    Route::delete('doctor/{id}', [AdminDoctorController::class, 'destroyDoctor']);
   });

@@ -3,7 +3,7 @@
 namespace App\Listeners;
 
 use App\Events\AppointmentBooked;
-use App\Mail\appintmenMail;
+use App\Mail\AppintmenMail;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Facades\Mail;
@@ -26,8 +26,8 @@ class SendAppointmentConfirmationEmail
     $appointment = $event->appointment;
     $appointment->load('user', 'doctor');
 
-    Mail::to($appointment->user->email)->send(new appintmenMail($appointment,'user'));
-    Mail::to($appointment->doctor->email)->send(new appintmenMail($appointment,'doctor'));
+    Mail::to($appointment->user->email)->send(new AppintmenMail($appointment,'user'));
+    Mail::to($appointment->doctor->email)->send(new AppintmenMail($appointment,'doctor'));
 }
 
 }

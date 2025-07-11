@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\AppointmentStatus;
 use App\Events\AppointmentBooked;
 use App\Models\Appointment;
 
@@ -38,4 +39,18 @@ public function store(AppointmentRequest $request)
         'error' => $response['error'] ?? null,
     ], $response['code']);
     }
+
+    public function toggleAppointmentStatus($id)
+{
+    // تستدعي دالة getModel من الـ BaseService لترجع الموعد أو ترمي استثناء إذا غير موجود
+    $appointment = $this->appointmentService->getmodel($id);
+
+    if ($appointment->status === AppointmentStatus::Confirmed->value) {
+        $appointment->update(['status' => AppointmentStatus::Cancelled->value]);
+        return $this->sendResponce($appointment, 'Appointment cancelled successfully');
+    }
+
+    $appointment->update(['status' => AppointmentStatus::Confirmed->value]);
+    return $this->sendResponce($appointment, 'Appointment confirmed successfully');
+}
 }

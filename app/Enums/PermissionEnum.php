@@ -8,7 +8,8 @@ enum PermissionEnum:string
     case MANAGE_DOCTORS = 'manage_doctors';
     case VIEW_APPOINTMENT = 'view_appointment';
     case BOOK_APPOINTMENT = 'book_appointment';
-
+    
+//الصلاحية المطلوبة بناءً على نوع الإجراء (action) الحالي
     public function guard()
     {
         return match ($this) {

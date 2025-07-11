@@ -29,4 +29,5 @@ class DoctorController extends apiController
         return $this->sendResponce($schedule, __('Appointments_shown_successfully'));
     }
 
+    
 }

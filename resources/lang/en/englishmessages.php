@@ -17,4 +17,6 @@ return[
 'Appointment_booked_successfully.'=>'Appointment booked successfully.',
 'the_selected_time_is_outside_the_alloew_workingh_ours.'=>'the_selected time is outside the alloew workingh ours.',
 'This_time_slot_is_already_booked.'=>'This time slot is already booked.',
+'reminder_subject' => 'Appointment Reminder',
+'reminder_body' => 'You have an appointment with Dr. :doctor on :date at :time.',
 ];

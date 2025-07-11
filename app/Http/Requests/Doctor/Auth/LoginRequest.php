@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Doctor\Auth;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreAdminRequest extends FormRequest
+class LoginRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,8 +21,9 @@ class StoreAdminRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            //
+         return [
+            'email'=>['required','email','exists:doctors,email'],
+            'password'=>['required','string','min:8']
         ];
-    }
+}
 }

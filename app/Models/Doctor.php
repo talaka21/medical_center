@@ -30,7 +30,7 @@ protected $hidden = [
     ];
       public function specialties()
 {
-    return $this->belongsToMany(Spacialty::class);
+    return $this->belongsToMany(Spacialty::class, 'doctor_specialties', 'doctor_id', 'specialty_id');
 }
  public function bookedAppointments()
 {

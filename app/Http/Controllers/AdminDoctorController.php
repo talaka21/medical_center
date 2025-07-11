@@ -20,9 +20,11 @@ class AdminDoctorController extends ApiController
      */
     public function addDoctor(DoctorRequest $request)
     {
-      $data =  $request->validated();
-      if (isset($data['name']) && is_array($data['name'])) {
-    $data['name'] = json_encode($data['name']);
+      $data = $request->validated();
+
+    if (isset($data['name']) && is_array($data['name'])) {
+        $data['name'] = json_encode($data['name']);
+
 }
 $Doctor = $this->DoctorService->create($data);
   return $this->sendResponce($Doctor ,__('Doctor_Created_successfully'));
@@ -30,7 +32,7 @@ $Doctor = $this->DoctorService->create($data);
 
 
 
-    public function update(DoctorRequest $request,  $id)
+    public function updateDoctor(DoctorRequest $request,  $id)
     {
 
          $data = $request->validated();
@@ -41,7 +43,7 @@ $Doctor = $this->DoctorService->create($data);
        return $this->sendResponce($Doctor ,__('Doctor_update_ successfully'));
     }
 
-    public function destroy($id)
+    public function destroyDoctor($id)
     {
       $this->DoctorService->delete($id);
         return $this->sendResponce(null, __('Specialty_deleted_successfully'));

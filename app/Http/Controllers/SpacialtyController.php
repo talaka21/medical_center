@@ -22,10 +22,12 @@ class SpacialtyController extends apiController
     $spacialties = $this->SpacialtyService->getAllSpecialties();
         return $this->sendResponce($spacialties, __('specialties_listed_successfully'));
 }
-public function bySpecialty($doctorId)
+public function bySpecialty($SpacialtyId)
 {
-    $schedule = $this->SpacialtyService->getDoctorScheduleSlots($doctorId);
-        return response()->json($schedule);
+   $Spacialty = Spacialty::with('doctors')->findOrFail($SpacialtyId);
+
+    // ترجع الأطباء المرتبطين بالتخصص مع معلوماتهم
+    return response()->json($Spacialty->doctors);
 }
 public function showDoctorSchedule($doctorId)
 {

@@ -11,6 +11,6 @@ class Spacialty extends Model
     public $translatable = ['name'];
    public function doctors()
     {
-        return $this->belongsToMany(Doctor::class);
+        return $this->belongsToMany(Doctor::class, 'doctor_specialties', 'specialty_id', 'doctor_id');
     }
 }

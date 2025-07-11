@@ -14,10 +14,7 @@ enum UserRole:string
         return match ($this) {
             self::ADMIN => 'admin',
             self::DOCTOR => 'doctor',
-
             self::USER=> 'user'
-
-
         };
     }
 }

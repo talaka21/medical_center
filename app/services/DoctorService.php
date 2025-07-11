@@ -1,6 +1,7 @@
 <?php
  namespace App\Services;
 
+use App\Enums\AppointmentStatus;
 use App\Models\Appointment;
 use App\Models\Doctor;
 
@@ -22,8 +23,8 @@ use App\Models\Doctor;
 
         // جلب المواعيد المحجوزة
         return Appointment::where('doctor_id', $id)
-                          ->where('status', 'booked') // غيّرها حسب نوع الحالة في جدولك
-                          ->with('patient') // إذا في علاقة مع المريض
+                          ->where('status', AppointmentStatus::Pending->value,) // غيّرها حسب نوع الحالة في جدولك
+                          ->with('user') // إذا في علاقة مع المريض
                           ->latest()
                           ->get();
     }

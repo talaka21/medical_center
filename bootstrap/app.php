@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\Localization;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -15,7 +16,13 @@ return Application::configure(basePath: dirname(__DIR__))
             Route::middleware('api')->prefix('admin')->group(base_path('routes/admin.php'));
                  Route::middleware('api')->prefix('doctor')->group(base_path('routes/doctor.php'));
         }
+
     )
+
+     ->withMiddleware(function (Middleware $middleware) {
+        // $middleware->append(Localization::class);
+        $middleware->api([Localization::class]);
+ })
     ->withMiddleware(function (Middleware $middleware): void {
         //
     })

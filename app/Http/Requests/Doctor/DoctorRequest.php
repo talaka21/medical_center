@@ -17,9 +17,11 @@ class DoctorRequest extends FormRequest
     public function rules(): array
     {
          return [
-         'name'=> ['required', 'string', 'max:255'],
-            'email'=>['required','email','unique:doctors,email'],
-            'password'=>['required','string','min:8']
+         'name' => ['required', 'array'],
+         'name.en' => ['required', 'string', 'max:255'],
+         'name.ar' => ['required', 'string', 'max:255'],
+         'email'=>['required','email','unique:doctors,email'],
+         'password'=>['required','string','min:8']
         ];
     }
 
